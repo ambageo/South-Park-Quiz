@@ -11,6 +11,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+
 /**
  * The following app is a simple South Park quiz
  */
@@ -20,14 +21,24 @@ public class MainActivity extends AppCompatActivity {
     boolean is1BoxChecked, is2BoxChecked, is3BoxChecked, is4BoxChecked;
     CheckBox firstAnswerCheckBox, secondAnswerCheckBox, thirdAnswerCheckBox, fourthAnswerCheckBox;
     EditText question2Text, question4Text, question7Text, question8Text;
+    MediaPlayer backgroundSong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //adds some background music
+        backgroundSong= MediaPlayer.create(this, R.raw.southparkendcredits);
+        backgroundSong.start();
     }
 
+    //this method stops the background music when the app closes
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (backgroundSong != null) backgroundSong.release();
+    }
     /**
      * This method is called when the result button is clicked
      */
@@ -78,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         else if(finalScore<7)
             Toast.makeText(getApplicationContext(), "Not bad, you got " + finalScore +", I guess we can become friends...", Toast.LENGTH_SHORT).show();
         else
-        Toast.makeText(getApplicationContext(), "Well done! You got " + finalScore +"! I RESPECT YOUR AUTHORITAH! ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Well done! You got " + finalScore +"! I RESPECT YOUR AUTHORITAH! ", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -127,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
             score += 1;
 
         return score;
+
     }
 
     /**
@@ -137,17 +149,38 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup Answer1RadioGroup = (RadioGroup) (findViewById(R.id.radioGroup1));
         Answer1RadioGroup.clearCheck();
 
-        //clear answers given on all questions that required text
-        question2Text.getText().clear();
-        question4Text.getText().clear();
-        question7Text.getText().clear();
-        question8Text.getText().clear();
+        /* clear answers given on all questions that required text
+        *  if statements to do so only if the EditTexts are not null,
+        *  or else it throws NullPointerException
+        */
+        if (question2Text!=null)
+            question2Text.getText().clear();
 
-        //un-check each checkBox that may have been selected
-        firstAnswerCheckBox.setChecked(false);
-        secondAnswerCheckBox.setChecked(false);
-        thirdAnswerCheckBox.setChecked(false);
-        fourthAnswerCheckBox.setChecked(false);
+        if (question4Text!=null)
+            question4Text.getText().clear();
+
+        if (question7Text!=null)
+            question7Text.getText().clear();
+
+        if (question8Text!=null)
+            question8Text.getText().clear();
+
+
+        /* un-check each checkBox that may have been selected
+        *  if statements to do so only if CheckBoxes have been checked,
+        *  or else it throws NullPointerException
+        */
+        if (firstAnswerCheckBox!=null)
+            firstAnswerCheckBox.setChecked(false);
+
+        if(secondAnswerCheckBox!=null)
+            secondAnswerCheckBox.setChecked(false);
+
+        if(thirdAnswerCheckBox!=null)
+            thirdAnswerCheckBox.setChecked(false);
+
+        if(fourthAnswerCheckBox!=null)
+            fourthAnswerCheckBox.setChecked(false);
 
         //clear the radioBox that was selected in the 5th question
         RadioGroup Answer5RadioGroup = (RadioGroup) (findViewById(R.id.radioGroup5));
