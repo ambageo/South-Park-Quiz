@@ -159,5 +159,6 @@ public class MainActivity extends AppCompatActivity {
 
         score = 0;
 
+        
     }
 }
