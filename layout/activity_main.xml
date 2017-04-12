@@ -64,7 +64,6 @@
 
                 </RadioGroup>
 
-
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
@@ -180,7 +179,7 @@
 
                 <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/radioGroup5"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="30dp"
@@ -209,6 +208,11 @@
 
 
                 </RadioGroup>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/kenny"/>
 
             </LinearLayout>
 
