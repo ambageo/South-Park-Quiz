@@ -1,8 +1,16 @@
-# South-Park-Quiz
-This is the quiz app for the Project 3 of the EU Android for Beginners Scholarship in Udacity. 
+# South-Park-Quiz #
+Quiz app for Project no 3 of the Android Basics Nanodegree by Udacity and Google. 
+
+## Contents ##
 The app consists of a 8- question quiz for one of my favorite shows, South Park.
-The app has 3 questions requiring one right answer (implemented with the use of RadioButtons,
-1 question requiring multiple answers to be chosen (implemented with checkBoxes)
-and 3 questions where the user is required to type the answer (implemented with EditTexts).
+Different input types are supported:
+- *RadioButton* for questions with only one right answer
+- *CheckBox* for questions that require multiple answers to be chosen
+- *EditText* for questions where the user is required to typre the correct answer
+
+## Showing the results ##
 The "show me the results" button calculates and shows a toast message with the result, 
 while the "Noooo!!! Retake" button resets all answers and lets the user try from the beginning.
+
+## Built with ##
+Android Studio.
