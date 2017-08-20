@@ -1,6 +1,8 @@
 # South-Park-Quiz #
 Quiz app for Project no 3 of the Android Basics Nanodegree by Udacity and Google. 
 
+<img src="SouthParkQuiz-2017-04-12.png" width="400">  <img src="SouthParkQuiz-2017-04-12-no2.png" width="400" align="right">
+
 ## Contents ##
 The app consists of a 8- question quiz for one of my favorite  TV shows, South Park.
 Different input types are supported:
