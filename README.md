@@ -9,6 +9,7 @@ Different input types are supported:
 - *RadioButton* for questions with only one right answer
 - *CheckBox* for questions that require multiple answers to be chosen
 - *EditText* for questions where the user is required to typre the correct answer
+
 The Android *MusicPlayer* is also used to add some background music while the app is open.
 
 ## Showing the results ##
