@@ -17,7 +17,7 @@ The Android *MusicPlayer* is also used to add some background music while the ap
 <br> </br>
 
 ## Showing the results ##
-The "show me the results" button calculates and shows a toast message with the result, 
+The "Show me the results" button calculates and shows a toast message with the result, 
 while the "Noooo!!! Retake" button resets all answers and lets the user try from the beginning.
 <br></br>
 
